@@ -1,0 +1,58 @@
+#include <stdio.h>
+int main()
+{
+    int jenis,i,tugas;
+    float nilai_tugas,total_tugas, total_nilai,UTS,UAS;
+    float matkul[4][3];
+    matkul[1][0] = .15;
+    matkul[1][1] = .4;
+    matkul[1][2] = .45;
+    matkul[2][0] = .25;
+    matkul[2][1] = .35;
+    matkul[2][2] = .40;
+    matkul[3][0] = .0;
+    matkul[3][1] = .45;
+    matkul[3][2] = .55;
+    printf("Masukan Jenis Mata Kuliah \n 1. Matematika Diskret\n 2. Pemograman dasar \n 3. Kalkulus\n");
+    scanf("%d", &jenis);
+    printf("Masukan jumlah tugas = ");
+    scanf("%d", &tugas);
+    for(i=1;i<=tugas;++i){
+        printf("Nilai Tugas %d =", i);
+        scanf("%f", &nilai_tugas);
+        total_tugas += nilai_tugas;
+    }
+    float rata = (float)tugas;
+    total_tugas = total_tugas/rata;
+    printf("Masukan nilai UTS =");
+    scanf("%f", &UTS);
+    printf("Masukan nilai UAS =");
+    scanf("%f", &UAS);
+    total_nilai = (matkul[jenis][0])*total_tugas + matkul[jenis][1]*UTS + matkul[jenis][2]*UAS;
+    printf("==============================");
+    printf("\nNilai rata-rata total = %f ", total_nilai);
+    //printf("\n");
+    if(total_nilai>=85){
+        printf("Grade = A");
+    }else if(total_nilai>=82){
+        printf("Grade = A-");
+    }else if(total_nilai>=80){
+        printf("Grade = A/B");
+    }else if(total_nilai>=76){
+        printf("Grade = B+");
+    }else if(total_nilai>=70){
+        printf("Grade = B");
+    }else if(total_nilai>=66){
+        printf("Grade = B-");
+    }else if(total_nilai>=60){
+        printf("Grade = B/C");
+    }else if(total_nilai>=58){
+        printf("Grade = C+");
+    }else if(total_nilai>=55){
+        printf("Grade = C");
+    }else if(total_nilai>=40){
+        printf("Grade = D");
+    }else if(total_nilai>=0){
+        printf("Grade = E");
+    }
+}
